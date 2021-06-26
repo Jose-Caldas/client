@@ -9,11 +9,11 @@ export default {
 
 export const Basic: Story = (args) => <Main {...args} />;
 Basic.args = {
-  title: "jrcaldas",
-  description: "121212",
+  title: "React Avançado",
+  description: "TypeScript, ReactJS, NextJS e Styled-Components",
 };
-export const Second: Story = (args) => <Main {...args} />;
-Second.args = {
-  title: "banana",
-  description: "32323232",
-};
+// export const Second: Story = (args) => <Main {...args} />;
+// Second.args = {
+//   title: "banana",
+//   description: "32323232",
+// };
