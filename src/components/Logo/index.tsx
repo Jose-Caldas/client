@@ -2,10 +2,12 @@ import { Wrapper } from "./styles";
 
 export type LogoProps = {
   color?: "white" | "black";
+  size?: "normal" | "large";
+  id?: string;
 };
 
-const Logo = ({ color = "white" }: LogoProps) => (
-  <Wrapper color={color}>
+const Logo = ({ color = "white", id, size = "normal" }: LogoProps) => (
+  <Wrapper color={color} size={size}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -14,11 +16,11 @@ const Logo = ({ color = "white" }: LogoProps) => (
       aria-label="Won Games"
     >
       <path
-        fill={`url(#pattern0)`}
+        fill={`url(#paint_linear_${id})`}
         d="M.05 15.23L.02 35.87a6 6 0 009.33 5l20.6-13.72 20.54 13.8a6 6 0 009.34-4.97l.04-20A11.81 11.81 0 0044.75 4.62l-.87.25a50.87 50.87 0 01-29.36-.27A11.15 11.15 0 00.05 15.23z"
       />
       <path
-        fill="currentColor"
+        fill="#110F28"
         fillOpacity=".15"
         d="M30.16 27.16l-6.03-4.3a.5.5 0 00-.78.5l1.3 7.3 5.51-3.5z"
       />
@@ -66,7 +68,7 @@ const Logo = ({ color = "white" }: LogoProps) => (
       />
       <defs>
         <linearGradient
-          id={`paint_linear`}
+          id={`paint_linear_${id}`}
           x1="29.16"
           x2="30.15"
           y1="-7.4"
