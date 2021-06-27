@@ -1,8 +1,9 @@
 import { screen } from "@testing-library/react";
+import "jest-styled-components";
 
 //renderizar o component 'render'
 //selecionar o elemento 'screen' (queries) - getByLabel, getByText ...
-//expect - assertion - assercão, análise, comparação (neste caso renderizar a logo branca e label Won Games - acessibilidade, e teste de tamanho logo)
+//expect - assertion - assercão, análise, comparação (neste caso renderizar a logo branca e label Won Games - acessibilidade, teste de tamanho da logo e responsividade)
 
 import Logo from ".";
 import { renderWithTheme } from "../../utils/tests/helpers";
@@ -31,5 +32,15 @@ describe("<Logo/>", () => {
     expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
       width: "11rem",
     });
+  });
+  it("should render a large logo without text if hideOnMobile", () => {
+    renderWithTheme(<Logo hideOnMobile />);
+    expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyleRule(
+      "width",
+      "5.8rem",
+      {
+        media: "(max-width: 768px)",
+      }
+    );
   });
 });
