@@ -4,6 +4,7 @@ import { Menu2 as MenuIcon } from "@styled-icons/remix-fill/Menu2";
 import { ShoppingCart as ShoppingCartIcon } from "@styled-icons/material-outlined/ShoppingCart";
 import { Search as SearchIcon } from "@styled-icons/material-outlined/Search";
 import { Close as CloseIcon } from "@styled-icons/material-outlined/Close";
+import Button from "../Button/";
 
 import Logo from "../Logo";
 
@@ -13,6 +14,10 @@ import {
   LogoWrapper,
   MenuGroup,
   MenuFull,
+  MenuNav,
+  MenuLink,
+  RegisterBox,
+  CreateAccount,
 } from "./styles";
 
 const Menu = () => {
@@ -38,6 +43,19 @@ const Menu = () => {
       </MenuGroup>
       <MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
+        <MenuNav>
+          <MenuLink href="#">Home</MenuLink>
+          <MenuLink href="#">Explore</MenuLink>
+        </MenuNav>
+        <RegisterBox>
+          <Button fullWidth size="large">
+            Log in now
+          </Button>
+          <span>Or</span>
+          <CreateAccount href="#" title="Sign Up">
+            Sign Up
+          </CreateAccount>
+        </RegisterBox>
       </MenuFull>
     </Wrapper>
   );
