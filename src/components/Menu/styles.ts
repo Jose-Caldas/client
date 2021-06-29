@@ -5,7 +5,7 @@ export const Wrapper = styled.menu`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    padding: ${theme.spacings.small} 0;
+    padding: ${theme.spacings.small} ${theme.spacings.xsmall};
     position: relative;
   `}
 `;
@@ -96,6 +96,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     left: 0;
     right: 0;
     height: 100vh;
+
     overflow: hidden;
     pointer-events: ${isOpen ? "all" : "none"};
     transition: 0.3s ease-in-out;
