@@ -20,7 +20,11 @@ import {
   CreateAccount,
 } from "./styles";
 
-const Menu = () => {
+export type MenuProps = {
+  username?: string;
+};
+
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Wrapper>
@@ -46,16 +50,24 @@ const Menu = () => {
         <MenuNav>
           <MenuLink href="#">Home</MenuLink>
           <MenuLink href="#">Explore</MenuLink>
+          {!!username && (
+            <>
+              <MenuLink href="#">My account</MenuLink>
+              <MenuLink href="#">Wishlist</MenuLink>
+            </>
+          )}
         </MenuNav>
-        <RegisterBox>
-          <Button fullWidth size="large">
-            Log in now
-          </Button>
-          <span>Or</span>
-          <CreateAccount href="#" title="Sign Up">
-            Sign Up
-          </CreateAccount>
-        </RegisterBox>
+        {!username && (
+          <RegisterBox>
+            <Button fullWidth size="large">
+              Log in now
+            </Button>
+            <span>Or</span>
+            <CreateAccount href="#" title="Sign Up">
+              Sign Up
+            </CreateAccount>
+          </RegisterBox>
+        )}
       </MenuFull>
     </Wrapper>
   );
