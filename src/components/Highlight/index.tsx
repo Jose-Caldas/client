@@ -1,5 +1,5 @@
 import Button from "../Button";
-import { Wrapper, Title, Subtitle, Content } from "./styles";
+import { Wrapper, Title, Subtitle, Content, FloatImage } from "./styles";
 
 export type HighlightProps = {
   title: string;
@@ -7,6 +7,7 @@ export type HighlightProps = {
   buttonLabel: string;
   buttonLink: string;
   backgroundImage: string;
+  floatImage?: string;
 };
 
 const Highlight = ({
@@ -15,8 +16,10 @@ const Highlight = ({
   buttonLabel,
   buttonLink,
   backgroundImage,
+  floatImage,
 }: HighlightProps) => (
   <Wrapper backgroundImage={backgroundImage}>
+    {!!floatImage && <FloatImage src={floatImage} alt={title} />}
     <Content>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
