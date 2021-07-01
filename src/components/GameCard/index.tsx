@@ -7,6 +7,7 @@ import {
   FavButton,
   BuyBox,
   Price,
+  Content,
 } from "./styles";
 import {
   AddShoppingCart,
@@ -25,17 +26,19 @@ const GameCard = ({ img, title, developer, price }: GameCardProps) => (
     <ImageBox>
       <img src={img} alt={title} />
     </ImageBox>
-    <GameInfo>
-      <Title>{title}</Title>
-      <Developer>{developer}</Developer>
-    </GameInfo>
-    <FavButton role="button">
-      <FavoriteBorder aria-label="Add to Wishlist" />
-    </FavButton>
-    <BuyBox>
-      <Price>{price}</Price>
-      <Button icon={<AddShoppingCart />} size="small" />
-    </BuyBox>
+    <Content>
+      <GameInfo>
+        <Title>{title}</Title>
+        <Developer>{developer}</Developer>
+      </GameInfo>
+      <FavButton role="button">
+        <FavoriteBorder aria-label="Add to Wishlist" />
+      </FavButton>
+      <BuyBox>
+        <Price>{price}</Price>
+        <Button icon={<AddShoppingCart />} size="small" />
+      </BuyBox>
+    </Content>
   </Wrapper>
 );
 

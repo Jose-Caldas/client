@@ -1,20 +1,33 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithTheme } from "../../utils/tests/helpers";
 import "jest-styled-components";
 
 import GameCard from ".";
-// import { renderWithTheme } from "../../utils/tests/helpers";
 
-//renderizar o card
-//verificar se o title foi renderizado
-//verificar se o developer foi renderizado
-//verificar se a img foi renderizado
-//verificar se o price foi renderizado
+const props = {
+  title: "Population Zero",
+  developer: "Rockstar Games",
+  img: "https://source.unsplash.com/user/willianjusten/300x140",
+  price: "R$ 240,00",
+};
 
-describe("<GameCard/>", () => {
+describe("<GameCard />", () => {
   it("should render correctly", () => {
-    render(<GameCard />);
+    renderWithTheme(<GameCard {...props} />);
+
     expect(
-      screen.getByRole("heading", { name: /GameCard/i })
+      screen.getByRole("heading", { name: props.title })
     ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole("heading", { name: props.developer })
+    ).toBeInTheDocument();
+
+    expect(screen.getByRole("img", { name: props.title })).toHaveAttribute(
+      "src",
+      props.img
+    );
+
+    expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument();
   });
 });
