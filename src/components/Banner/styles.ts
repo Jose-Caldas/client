@@ -6,7 +6,7 @@ import * as RibbonStyles from "../Ribbon/styles";
 export const Wrapper = styled.main`
   position: relative;
 
-  ${media.lessThan("large")`
+  ${media.lessThan("medium")`
   ${RibbonStyles.Wrapper} {
     right:0;
     &::before{
@@ -19,6 +19,8 @@ export const Wrapper = styled.main`
 
   ${media.greaterThan("medium")`
   box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2)
+
+  
   `}
 `;
 
