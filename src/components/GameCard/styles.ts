@@ -89,7 +89,7 @@ export const BuyBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: ${theme.spacings.xxsmall};
+    margin-top: ${theme.spacings.xsmall};
   `}
 `;
 
