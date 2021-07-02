@@ -1,4 +1,4 @@
-import { screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { renderWithTheme } from "../../utils/tests/helpers";
 import "jest-styled-components";
 
@@ -61,5 +61,20 @@ describe("<GameCard />", () => {
 
     fireEvent.click(screen.getAllByRole("button")[0]);
     expect(onFav).toBeCalled();
+  });
+  it("should render Ribbon", () => {
+    render(
+      <GameCard
+        {...props}
+        ribbon="My Ribbon"
+        ribbonColor="secondary"
+        ribbonSize="small"
+      />
+    );
+    const ribbon = screen.getByText(/my ribbon/i);
+
+    expect(ribbon).toHaveStyle({ backgroundColor: "#3CD3C1" });
+    expect(ribbon).toHaveStyle({ height: "2.6rem", fontSize: "1.2rem" });
+    expect(ribbon).toBeInTheDocument();
   });
 });

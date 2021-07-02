@@ -15,7 +15,11 @@ export default {
     onFav: {
       action: "Clicked",
     },
+    ribbon: {
+      type: "string",
+    },
   },
+
   parameters: {
     backgrounds: {
       default: "dark",
@@ -24,3 +28,15 @@ export default {
 } as Meta;
 
 export const Default: Story<GameCardProps> = (args) => <GameCard {...args} />;
+
+export const WithRibbon: Story<GameCardProps> = (args) => (
+  <div style={{ width: "30rem" }}>
+    <GameCard {...args} />
+  </div>
+);
+
+WithRibbon.args = {
+  ribbon: "20% OFF",
+  ribbonSize: "small",
+  ribbonColor: "primary",
+};

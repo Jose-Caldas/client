@@ -3,6 +3,7 @@ import styled, { css, DefaultTheme } from "styled-components";
 export const Wrapper = styled.article`
   ${({ theme }) => css`
     position: relative;
+
     display: flex;
     flex-direction: column;
     max-width: 30rem;

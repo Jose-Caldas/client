@@ -45,7 +45,7 @@ export const Wrapper = styled.div<WrapperProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-
+    z-index: 10;
     color: ${theme.colors.white};
     font-weight: ${theme.font.bold};
     position: absolute;
