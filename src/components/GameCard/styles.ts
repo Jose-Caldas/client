@@ -90,7 +90,7 @@ export const BuyBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: ${theme.spacings.xsmall};
+    margin-top: ${theme.spacings.xxsmall};
   `}
 `;
 
@@ -110,7 +110,7 @@ const priceModifiers = {
     color: ${theme.colors.gray};
     text-decoration: line-through;
     font-style: italic;
-    margin-right: ${theme.spacings.xsmall};
+    margin-right: ${theme.spacings.xxsmall};
   `,
 };
 

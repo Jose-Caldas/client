@@ -28,7 +28,7 @@ const BannerSlider = ({ items }: BannerSliderProps) => (
   <Wrapper>
     <Slider settings={settings}>
       {items.map((item) => (
-        <Banner key={item.title} {...item} ribbonSize="normal" />
+        <Banner key={item.title} {...item} />
       ))}
     </Slider>
   </Wrapper>
