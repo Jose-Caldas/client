@@ -63,7 +63,7 @@ describe("<GameCard />", () => {
     expect(onFav).toBeCalled();
   });
   it("should render Ribbon", () => {
-    render(
+    renderWithTheme(
       <GameCard
         {...props}
         ribbon="My Ribbon"

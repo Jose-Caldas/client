@@ -40,16 +40,17 @@ const wrapperModifiers = {
   `,
 };
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div<RibbonProps>`
   ${({ theme, color, size }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+
     color: ${theme.colors.white};
     font-weight: ${theme.font.bold};
     position: absolute;
     top: 1.6rem;
+    z-index: ${theme.layers.base};
 
     &::before {
       content: "";
