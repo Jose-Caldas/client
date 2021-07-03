@@ -1,6 +1,18 @@
-import { createGlobalStyle, css } from "styled-components";
+import {
+  createGlobalStyle,
+  css,
+  GlobalStyleComponent,
+  DefaultTheme,
+} from "styled-components";
 
-export const GlobalStyles = createGlobalStyle`
+type GlobalStylesProps = {
+  removeBg?: boolean;
+};
+
+export const GlobalStyles: GlobalStyleComponent<
+  GlobalStylesProps,
+  DefaultTheme
+> = createGlobalStyle`
 
 
 @font-face {
@@ -38,9 +50,14 @@ export const GlobalStyles = createGlobalStyle`
 
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
+
+     &::before,
+     &::after{
+       box-sizing:inherits;
+     }
  }
 
-${({ theme }) => css`
+${({ theme, removeBg }) => css`
   html {
     font-size: 62.5%;
   }
@@ -48,7 +65,15 @@ ${({ theme }) => css`
   body {
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
+
+    ${
+      !removeBg &&
+      css`
+    background-color: ${theme.colors.mainBg};
   }
+    `
+    }
+ 
 `}
 
  
