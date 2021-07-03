@@ -11,6 +11,7 @@ export type GameCardSliderProps = {
 };
 
 const settings: Settings = {
+  arrows: true,
   slidesToShow: 4,
   nextArrow: <ArrowRight aria-label="Next Games" />,
   prevArrow: <ArrowLeft aria-label="Previous Games" />,
@@ -20,14 +21,14 @@ const settings: Settings = {
     {
       breakpoint: 1375,
       settings: {
-        arrows: false,
+        arrows: true,
         slidesToShow: 3.2,
       },
     },
     {
       breakpoint: 1024,
       settings: {
-        arrows: false,
+        arrows: true,
         slidesToShow: 2.2,
       },
     },
@@ -42,7 +43,7 @@ const settings: Settings = {
       breakpoint: 375,
       settings: {
         arrows: false,
-        slidesToShow: 1,
+        slidesToShow: 1.1,
       },
     },
   ],
