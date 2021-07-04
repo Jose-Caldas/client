@@ -49,7 +49,7 @@ const settings: Settings = {
   ],
 };
 
-const GameCardSlider = ({ items, color = "black" }: GameCardSliderProps) => (
+const GameCardSlider = ({ items, color = "white" }: GameCardSliderProps) => (
   <Wrapper color={color}>
     <Slider settings={settings}>
       {items.map((item, index) => (
