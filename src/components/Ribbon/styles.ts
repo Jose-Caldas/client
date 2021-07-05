@@ -2,7 +2,7 @@ import styled, { css, DefaultTheme } from "styled-components";
 import { RibbonColors, RibbonProps } from ".";
 import { darken } from "polished";
 
-type WrapperProps = Omit<RibbonProps, "children">;
+// type WrapperProps = Omit<RibbonProps, "children">;
 
 const wrapperModifiers = {
   color: (theme: DefaultTheme, color: RibbonColors) => css`
