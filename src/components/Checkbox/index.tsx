@@ -1,4 +1,4 @@
-import { Wrapper, Label } from "./styles";
+import { Wrapper, Label, Input } from "./styles";
 
 export type CheckboxProps = {
   label?: string;
@@ -12,7 +12,7 @@ const Checkbox = ({
   labelColor = "white",
 }: CheckboxProps) => (
   <Wrapper>
-    <input type="checkbox" id={labelFor} />
+    <Input type="checkbox" id={labelFor} />
     {!!label && (
       <Label htmlFor={labelFor} labelColor={labelColor}>
         {label}
