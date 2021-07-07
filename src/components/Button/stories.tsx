@@ -3,7 +3,7 @@ import Button, { ButtonProps } from ".";
 import { AddShoppingCart } from "@styled-icons/material-outlined/AddShoppingCart";
 
 export default {
-  title: "Button",
+  title: "FORM/Button",
   component: Button,
   argTypes: {
     children: {
