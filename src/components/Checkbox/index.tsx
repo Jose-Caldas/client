@@ -4,38 +4,41 @@ import { Wrapper, Label, Input } from "./styles";
 
 export type CheckboxProps = {
   onCheck?: (status: boolean) => void;
-
+  isChecked?: boolean;
   label?: string;
   labelFor?: string;
   labelColor?: "white" | "black";
-} & InputHTMLAttributes<HTMLInputElement>; //aumenta a capacidade do checkbox receber mais atributos
+  value?: string | ReadonlyArray<string> | number;
+} & InputHTMLAttributes<HTMLInputElement>;
 
 const Checkbox = ({
   onCheck,
+  isChecked = false,
   label,
   labelFor = "",
   labelColor = "white",
+  value,
+  ...props
 }: CheckboxProps) => {
-  //Controlled components (state)
-
-  const [checked, setChecked] = useState(false);
+  // controlled component (state)
+  const [checked, setChecked] = useState(isChecked);
 
   const onChange = () => {
-    const status = !checked; // true para false | false para true
+    const status = !checked; // true => false => true
     setChecked(status);
 
-    if (onCheck) {
-      onCheck(status);
-    }
+    !!onCheck && onCheck(status);
   };
 
   return (
     <Wrapper>
       <Input
-        type="checkbox"
         id={labelFor}
+        type="checkbox"
         onChange={onChange}
         checked={checked}
+        value={value}
+        {...props}
       />
       {!!label && (
         <Label htmlFor={labelFor} labelColor={labelColor}>

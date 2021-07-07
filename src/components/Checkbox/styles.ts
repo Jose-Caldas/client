@@ -20,7 +20,6 @@ export const Input = styled.input`
     transition: background border ${theme.transition.fast};
     position: relative;
     outline: none;
-    padding: ${theme.spacings.xxsmall};
 
     &:before {
       content: "";
@@ -31,13 +30,20 @@ export const Input = styled.input`
       border-left: 0;
       transform: rotate(45deg);
       position: absolute;
-      top: 0.1rem;
+      top: -0.1rem;
       opacity: 0;
       transition: ${theme.transition.fast};
     }
+
     &:focus {
-      box-shadow: 0 0 0.7rem ${theme.colors.primary};
+      box-shadow: 0 0 0.5rem ${theme.colors.primary};
     }
+
+    &:hover {
+      border-color: ${theme.colors.gray};
+      transition: ${theme.transition.fast};
+    }
+
     &:checked {
       border-color: ${theme.colors.primary};
       background: ${theme.colors.primary};
@@ -51,9 +57,9 @@ export const Input = styled.input`
 
 export const Label = styled.label<Pick<CheckboxProps, "labelColor">>`
   ${({ theme, labelColor }) => css`
+    cursor: pointer;
+    padding-left: ${theme.spacings.xxsmall};
     color: ${theme.colors[labelColor!]};
     line-height: 1.8rem;
-    padding-left: ${theme.spacings.xxsmall};
-    cursor: pointer;
   `}
 `;

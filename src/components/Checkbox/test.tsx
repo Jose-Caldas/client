@@ -48,5 +48,32 @@ describe("<Checkbox/>", () => {
     await waitFor(() => {
       expect(onCheck).toHaveBeenCalledTimes(1);
     });
+    expect(onCheck).toHaveBeenCalledWith(true);
+  });
+
+  it("should checkbox is checked by default", async () => {
+    const onCheck = jest.fn();
+
+    renderWithTheme(<Checkbox label="checkbox" onCheck={onCheck} isChecked />);
+
+    userEvent.click(screen.getByRole("checkbox"));
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1);
+    });
+    expect(onCheck).toHaveBeenCalledWith(false);
+  });
+
+  it("should accessible with tab", () => {
+    const { container } = renderWithTheme(
+      <Checkbox label="checkbox" labelFor="checkbox" />
+    );
+
+    expect(document.body).toHaveFocus();
+
+    userEvent.tab();
+
+    expect(screen.getByLabelText(/checkbox/i)).toHaveFocus();
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -46,6 +46,7 @@ const Home = ({
   <section>
     <Container>
       <Menu />
+
       <SectionBanner>
         <BannerSlider items={banners} />
       </SectionBanner>
@@ -64,7 +65,10 @@ const Home = ({
         <Heading lineLeft lineColor="secondary">
           Most Popular
         </Heading>
-        <Highlight {...mostPopularHighlight} />
+        <Highlight
+          {...mostPopularHighlight}
+          floatImage="/img/red-dead-float.png"
+        />
         <GameCardSlider items={mostPopularGames} />
       </SectionMostPopular>
     </Container>
@@ -74,7 +78,11 @@ const Home = ({
           Up Comming
         </Heading>
         <GameCardSlider items={upcommingGames} />
-        <Highlight {...upcommingHighlight} />
+        <Highlight
+          {...upcommingHighlight}
+          floatImage="/img/red-dead-float.png"
+          alignment="left"
+        />
         <GameCardSlider items={upcommingMoreGames} />
       </SectionUpcoming>
     </Container>
