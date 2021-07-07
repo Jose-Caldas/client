@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { InputHTMLAttributes } from "react";
-import { Wrapper, Label, InputWrapper, Input } from "./styles";
+import { Wrapper, Label, InputWrapper, Input, Icon } from "./styles";
 
 export type TextFieldProps = {
   onInput?: (value: string) => void;
   label?: string;
   labelFor?: string;
   inicialValue?: string;
+  icon?: ReactNode;
+  iconPosition?: "left" | "right";
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const TextField = ({
@@ -14,6 +16,9 @@ const TextField = ({
   label,
   labelFor = "",
   inicialValue = "",
+  icon,
+  iconPosition = "left",
+
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(inicialValue);
@@ -28,7 +33,14 @@ const TextField = ({
     <Wrapper>
       {!!label && <Label htmlFor={labelFor}>{label}</Label>}
       <InputWrapper>
-        <Input type="text" onChange={onChange} value={value} {...props} />
+        {!!icon && <Icon iconPosition={iconPosition}>{icon}</Icon>}
+        <Input
+          type="text"
+          onChange={onChange}
+          value={value}
+          iconPosition={iconPosition}
+          {...props}
+        />
       </InputWrapper>
     </Wrapper>
   );
