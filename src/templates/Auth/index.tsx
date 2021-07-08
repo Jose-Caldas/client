@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import * as S from "./styles";
 import Logo from "../../components/Logo";
 import Heading from "../../components/Heading";
-// import Image from "next/image";
 
 export type AuthProps = {
   title: string;
@@ -15,7 +14,7 @@ const Auth = ({ title, children }: AuthProps) => (
       <S.BannerContent>
         <Logo id="banner" />
         <div>
-          <Heading>All your favorite games in one place</Heading>
+          <Heading size="huge">All your favorite games in one place</Heading>
           <S.Subtitle>
             <strong>WON</strong> is the best and most complete gaming platform.
           </S.Subtitle>

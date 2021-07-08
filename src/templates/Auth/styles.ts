@@ -23,6 +23,10 @@ export const BannerBlock = styled.div`
     background-position: center center;
     padding: ${theme.spacings.xxlarge} ${theme.spacings.xxlarge};
 
+    ${media.lessThan("medium")`
+    display:none;
+    `}
+
     &::after {
       content: "";
       position: absolute;
@@ -34,9 +38,6 @@ export const BannerBlock = styled.div`
       opacity: 0.85;
     }
   `}
-  ${media.lessThan("medium")`
-    display:none;
-    `}
 `;
 
 export const BannerContent = styled.div`
@@ -56,7 +57,7 @@ export const Subtitle = styled.h3`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.xxlarge};
     font-weight: ${theme.font.light};
-    margin-top: ${theme.spacings.xxsmall};
+    margin-top: ${theme.spacings.small};
     strong {
       color: ${theme.colors.primary};
     }
