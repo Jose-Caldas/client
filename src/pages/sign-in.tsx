@@ -1,11 +1,7 @@
 import Auth from "../templates/Auth";
 
 function SignIn() {
-  return (
-    <Auth>
-      <h1>Todo SignIn</h1>
-    </Auth>
-  );
+  return <Auth title="Sign In">children</Auth>;
 }
 
 export default SignIn;
