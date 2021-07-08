@@ -9,6 +9,13 @@ import Logo from ".";
 import { renderWithTheme } from "../../utils/tests/helpers";
 
 describe("<Logo/>", () => {
+  // render logo com id
+  it("should render the logo", () => {
+    const { container } = renderWithTheme(<Logo id="myLogo" />);
+
+    expect(container.querySelector("#paint_linear_myLogo")).toBeInTheDocument();
+  });
+
   it("should render a white label by default", () => {
     renderWithTheme(<Logo />);
     expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
