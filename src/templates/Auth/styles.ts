@@ -95,34 +95,3 @@ export const ContentWrapper = styled.div`
   width: 36rem;
   `}
 `;
-
-//Sign In
-export const Form = styled.form`
-  ${({ theme }) => css`
-    h1 {
-      color: ${theme.colors.black};
-      font-size: ${theme.font.sizes.small};
-      margin-top: ${theme.spacings.xxsmall};
-      text-align: end;
-      font-weight: ${theme.font.light};
-      margin-bottom: ${theme.spacings.xxlarge};
-      cursor: pointer;
-    }
-    h2 {
-      color: ${theme.colors.black};
-      font-size: ${theme.font.sizes.small};
-      margin-top: ${theme.spacings.xsmall};
-      text-align: center;
-      font-weight: ${theme.font.bold};
-
-      span {
-        color: ${theme.colors.secondary};
-        cursor: pointer;
-      }
-
-      &:hover span {
-        border-bottom: 1px solid ${theme.colors.secondary};
-      }
-    }
-  `}
-`;

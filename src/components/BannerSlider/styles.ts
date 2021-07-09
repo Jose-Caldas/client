@@ -2,8 +2,6 @@ import styled, { css } from "styled-components";
 import media from "styled-media-query";
 import * as BannerStyles from "../Banner/styles";
 
-// classes e outras tags retiradas de:  https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.css
-
 export const Wrapper = styled.section`
   ${({ theme }) => css`
     .slick-dots {
