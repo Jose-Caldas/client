@@ -1,13 +1,13 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
-import FormSignIn from "../FormSignIn";
+import FormSignUp from "../FormSignUp";
 
 export default {
-  title: "FORM/FormSignIn",
-  component: FormSignIn,
+  title: "FORM/FormSignUp",
+  component: FormSignUp,
 } as Meta;
 
 export const Default: Story = (args) => (
   <div style={{ width: 300, margin: "auto" }}>
-    <FormSignIn {...args} />
+    <FormSignUp {...args} />
   </div>
 );

@@ -6,18 +6,19 @@ import Link from "next/link";
 
 import * as S from "./styles";
 
-const FormSignin = () => (
+const FormSignIn = () => (
   <S.Wrapper>
     <form>
-      <TextField icon={<Email />} placeholder="Email"></TextField>
-      <TextField icon={<Lock />} placeholder="password"></TextField>
-
+      <TextField icon={<Email />} placeholder="Email" type="email"></TextField>
+      <TextField
+        icon={<Lock />}
+        placeholder="Password"
+        type="password"
+      ></TextField>
       <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
-
       <Button size="large" fullWidth>
         Sign in now
       </Button>
-
       <S.FormLink>
         Don’t have an account?
         <Link href="/sign-up">
@@ -28,4 +29,4 @@ const FormSignin = () => (
   </S.Wrapper>
 );
 
-export default FormSignin;
+export default FormSignIn;
