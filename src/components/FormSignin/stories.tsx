@@ -1,5 +1,5 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
-import FormSignIn from "../FormSignIn";
+import FormSignIn from "../FormSignin";
 
 export default {
   title: "FORM/FormSignIn",

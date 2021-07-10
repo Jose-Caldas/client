@@ -20,7 +20,7 @@ const Banner = ({
   subtitle,
   buttonLabel,
   buttonLink,
-  ribbonColor = "primary",
+  ribbonColor = "primary", 
   ribbon,
   ribbonSize = "small",
 }: BannerProps) => (
