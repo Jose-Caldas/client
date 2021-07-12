@@ -4,10 +4,12 @@ import { Lock } from "@styled-icons/material-outlined/Lock";
 import Button from "../../components/Button";
 import Link from "next/link";
 
-import * as S from "./styles";
+import { FormWrapper, FormLink, ForgotPassword } from "../Form/styles";
+
+// import * as S from "./styles";
 
 const FormSignIn = () => (
-  <S.Wrapper>
+  <FormWrapper>
     <form>
       <TextField icon={<Email />} placeholder="Email" type="email"></TextField>
       <TextField
@@ -15,18 +17,18 @@ const FormSignIn = () => (
         placeholder="Password"
         type="password"
       ></TextField>
-      <S.ForgotPassword href="#">Forgot your password?</S.ForgotPassword>
+      <ForgotPassword href="#">Forgot your password?</ForgotPassword>
       <Button size="large" fullWidth>
         Sign in now
       </Button>
-      <S.FormLink>
+      <FormLink>
         Don’t have an account?
         <Link href="/sign-up">
           <a>Sign up</a>
         </Link>
-      </S.FormLink>
+      </FormLink>
     </form>
-  </S.Wrapper>
+  </FormWrapper>
 );
 
 export default FormSignIn;
