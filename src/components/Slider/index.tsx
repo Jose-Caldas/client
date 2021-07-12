@@ -6,14 +6,14 @@ import { Wrapper } from "./styles";
 export type SliderSettings = Settings;
 
 export type SliderProps = {
-  children: ReactNode;
-  settings: SliderSettings;
+    children: ReactNode;
+    settings: SliderSettings;
 };
 
 const Slider = ({ children, settings }: SliderProps) => (
-  <Wrapper>
-    <SlickSlider {...settings}>{children}</SlickSlider>
-  </Wrapper>
+    <Wrapper>
+        <SlickSlider {...settings}>{children}</SlickSlider>
+    </Wrapper>
 );
 
 export default Slider;
