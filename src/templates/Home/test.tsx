@@ -23,22 +23,7 @@ const props = {
 };
 
 //mock para otimizar teste
-jest.mock("components/Menu", () => {
-    return {
-        __esModule: true,
-        default: function mock() {
-            return <div data-testid="Mock Menu"></div>;
-        },
-    };
-});
-jest.mock("components/Footer", () => {
-    return {
-        __esModule: true,
-        default: function mock() {
-            return <div data-testid="Mock Footer"></div>;
-        },
-    };
-});
+
 jest.mock("components/Showcase", () => {
     return {
         __esModule: true,
@@ -57,19 +42,13 @@ jest.mock("components/BannerSlider", () => {
 });
 
 describe("<Home/>", () => {
-    it("should render menu and footer", () => {
+    it("should render Banner and Showcase", () => {
         renderWithTheme(<Home {...props} />);
-
-        //Menu
-        expect(screen.getByTestId("Mock Menu")).toBeInTheDocument();
 
         // banner
         expect(screen.getByTestId("Mock BannerSlider")).toBeInTheDocument();
 
         //Showcase
         expect(screen.getAllByTestId("Mock Showcase")).toHaveLength(5);
-
-        //Footer
-        expect(screen.getByTestId("Mock Footer")).toBeInTheDocument();
     });
 });
