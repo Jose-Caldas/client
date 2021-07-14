@@ -3,7 +3,7 @@ import GameInfo, { GameInfoProps } from "../GameInfo";
 import mockGame from "./mock";
 
 export default {
-    title: "GameInfo",
+    title: "GAME/GameInfo",
     component: GameInfo,
     args: mockGame,
     parameters: {

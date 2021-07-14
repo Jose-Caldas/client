@@ -6,9 +6,8 @@ import * as RibbonStyles from "../Ribbon/styles";
 export const Wrapper = styled.div`
     ${({ theme }) => css`
         position: relative;
-        background-color: ${theme.colors.white};
+        background: ${theme.colors.white};
         padding: ${theme.spacings.small};
-
         ${RibbonStyles.Wrapper} {
             right: -1rem;
             &:before {
@@ -17,19 +16,18 @@ export const Wrapper = styled.div`
         }
 
         ${media.greaterThan("medium")`
-${RibbonStyles.Wrapper} {
-    right: ${theme.spacings.small};
-    top: ${theme.spacings.small};
-    font-size: ${theme.font.sizes.large};
-
-    &:before{
-        border: none;
-    }
-
-}
-`}
+      ${RibbonStyles.Wrapper} {
+        right: ${theme.spacings.small};
+        top: ${theme.spacings.small};
+        font-size: ${theme.font.sizes.large};
+        &:before {
+          border: none;
+        }
+      }
+    `}
     `}
 `;
+
 export const Description = styled.p`
     ${({ theme }) => css`
         font-size: ${theme.font.sizes.small};
@@ -50,6 +48,7 @@ export const ButtonsWrapper = styled.div`
             width: 100%;
             margin-bottom: ${theme.spacings.xxsmall};
         }
+
         ${media.greaterThan("medium")`
       flex-direction: row-reverse;
       > button {
