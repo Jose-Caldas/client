@@ -7,10 +7,10 @@ type Platform = "windows" | "linux" | "mac";
 
 export type GameDetailsProps = {
     platforms: Platform[];
-    developers?: string;
+    // developers?: string;
 };
 
-const GameDetails = ({ platforms, developers }: GameDetailsProps) => {
+const GameDetails = ({ platforms }: GameDetailsProps) => {
     const platformIcons = {
         linux: <Linux title="Linux" size="18" />,
         mac: <Apple title="Mac" size="18" />,

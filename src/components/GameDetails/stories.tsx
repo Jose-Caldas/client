@@ -9,10 +9,21 @@ export default {
             default: "won-dark",
         },
     },
+    args: {
+        platforms: ["windows", "linux", "mac"],
+    },
+    argTypes: {
+        platforms: {
+            control: {
+                type: "inline-check",
+                options: ["windows", "linux", "mac"],
+            },
+        },
+    },
 } as Meta;
 
-export const Default: Story = (args) => (
+export const Default: Story<GameDetailsProps> = (args) => (
     <div style={{ maxWidth: "130rem", margin: "0 auto" }}>
-        <GameDetails platforms={["windows", "linux", "mac"]} {...args} />
+        <GameDetails {...args} />
     </div>
 );
