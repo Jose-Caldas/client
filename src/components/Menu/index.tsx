@@ -37,13 +37,24 @@ const Menu = ({ username }: MenuProps) => {
             </MediaMatch>
 
             <LogoWrapper>
-                <Logo hideOnMobile />
+                <Link href="/" passHref>
+                    <a>
+                        <Logo hideOnMobile />
+                    </a>
+                </Link>
             </LogoWrapper>
 
             <MediaMatch greaterThan="medium">
                 <MenuNav>
-                    <MenuLink href="#">Home</MenuLink>
-                    <MenuLink href="#">Explore</MenuLink>
+                    <Link href="/" passHref>
+                        <MenuLink>Home</MenuLink>
+                    </Link>
+                    <Link
+                        href="http://localhost:3000/game/cyberpunk-2077"
+                        passHref
+                    >
+                        <MenuLink>Explore</MenuLink>
+                    </Link>
                 </MenuNav>
             </MediaMatch>
 
@@ -69,7 +80,9 @@ const Menu = ({ username }: MenuProps) => {
                     onClick={() => setIsOpen(false)}
                 />
                 <MenuNav>
-                    <MenuLink href="/">Home</MenuLink>
+                    <Link href="/" passHref>
+                        <MenuLink>Home</MenuLink>
+                    </Link>
 
                     <MenuLink href="#">Explore</MenuLink>
 
