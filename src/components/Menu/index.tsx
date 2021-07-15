@@ -72,6 +72,7 @@ const Menu = ({ username }: MenuProps) => {
                     <MenuLink href="/">Home</MenuLink>
 
                     <MenuLink href="#">Explore</MenuLink>
+
                     {!!username && (
                         <>
                             <MenuLink href="#">My account</MenuLink>
