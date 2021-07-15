@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import media from "styled-media-query";
 
-import * as HeadingStyles from "../../Heading/styles";
+import * as HeadingStyles from "../Heading/styles";
 
 export const Wrapper = styled.div`
     ${({ theme }) => css`

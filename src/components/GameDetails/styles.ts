@@ -21,9 +21,7 @@ export const ContentBlock = styled.div`
         `}
     `}
 `;
-export const Block = styled.div`
-    ${({ theme }) => css``}
-`;
+export const Block = styled.div``;
 export const Label = styled.h3`
     ${({ theme }) => css`
         font-size: ${theme.font.sizes.small};
@@ -39,9 +37,7 @@ export const Description = styled.p`
     `}
 `;
 export const IconWrapper = styled.span`
-    ${({ theme }) => css`
-        display: flex;
-    `}
+    display: flex;
 `;
 
 export const Icon = styled.div`

@@ -6,24 +6,24 @@ import { GameCardSliderProps } from ".";
 type WrapperProps = Pick<GameCardSliderProps, "color">;
 
 export const Wrapper = styled.section<WrapperProps>`
-  position: relative;
-  ${({ theme, color }) => css`
-    ${media.lessThan("large")`
+    position: relative;
+    ${({ theme, color }) => css`
+        ${media.lessThan("large")`
       overflow-x: hidden;
     `}
-    .slick-track,
+        .slick-track,
     .slick-list {
-      display: flex;
-    }
-    .slick-slide > div {
-      margin: 0 ${theme.spacings.xxsmall};
-      flex: 1 0 auto;
-      height: 100%;
-    }
-    .slick-list {
-      margin: 0 -${theme.spacings.xxsmall};
-    }
-    ${media.greaterThan("large")`
+            display: flex;
+        }
+        .slick-slide > div {
+            margin: 0 ${theme.spacings.xxsmall};
+            flex: 1 0 auto;
+            height: 100%;
+        }
+        .slick-list {
+            margin: 0 -${theme.spacings.xxsmall};
+        }
+        ${media.greaterThan("large")`
       .slick-slide > div {
         margin: 0 ${theme.spacings.xsmall};
       }
@@ -31,27 +31,27 @@ export const Wrapper = styled.section<WrapperProps>`
         margin: 0 -${theme.spacings.xsmall};
       }
     `}
-    .slick-prev,
+        .slick-prev,
     .slick-next {
-      display: block;
-      color: ${theme.colors[color!]};
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: 2.5rem;
-      height: 2.5rem;
-      padding: 0;
-      transform: translate(0, -50%);
-    }
-    .slick-prev {
-      left: -${theme.spacings.xxlarge};
-    }
-    .slick-next {
-      right: -${theme.spacings.xxlarge};
-    }
-    .slick-prev.slick-disabled,
-    .slick-next.slick-disabled {
-      visibility: hidden;
-    }
-  `}
+            display: block;
+            color: ${theme.colors[color!]};
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+            transform: translate(0, -50%);
+        }
+        .slick-prev {
+            left: -${theme.spacings.xxlarge};
+        }
+        .slick-next {
+            right: -${theme.spacings.xxlarge};
+        }
+        .slick-prev.slick-disabled,
+        .slick-next.slick-disabled {
+            visibility: hidden;
+        }
+    `}
 `;
