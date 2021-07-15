@@ -8,9 +8,9 @@ import Heading from "../Heading";
 import Ribbon from "../Ribbon";
 
 export type GameInfoProps = {
-    title?: string;
-    description?: string;
-    price?: string;
+    title: string;
+    description: string;
+    price: string;
 };
 
 const GameInfo = ({ title, description, price }: GameInfoProps) => (
