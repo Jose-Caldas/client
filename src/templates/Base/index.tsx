@@ -2,24 +2,24 @@ import { ReactNode } from "react";
 import { Container } from "../../components/Container";
 import Menu from "../../components/Menu";
 import Footer from "../../components/Footer";
-import { SectionFooter } from "./styles";
+import * as S from "./styles";
 
 export type BaseTemplateProps = {
     children: ReactNode;
 };
 
 const Base = ({ children }: BaseTemplateProps) => (
-    <section>
+    <S.Wrapper>
         <Container>
             <Menu />
         </Container>
         {children}
-        <SectionFooter>
+        <S.SectionFooter>
             <Container>
                 <Footer />
             </Container>
-        </SectionFooter>
-    </section>
+        </S.SectionFooter>
+    </S.Wrapper>
 );
 
 export default Base;
