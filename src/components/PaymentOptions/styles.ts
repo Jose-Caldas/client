@@ -1,5 +1,6 @@
 import { tint } from "polished";
 import styled, { css, DefaultTheme } from "styled-components";
+import * as ButtonStyles from "../../components/Button/styles";
 
 export const Wrapper = styled.main`
     ${({ theme }) => css`
@@ -20,6 +21,12 @@ export const Footer = styled.div`
         padding: ${theme.spacings.small};
         display: flex;
         align-items: center;
+
+        ${ButtonStyles.Wrapper} {
+            padding-left: ${theme.spacings.xxsmall};
+            padding-right: ${theme.spacings.xxsmall};u
+            outline: 0;
+        }
     `}
 `;
 export const CardsList = styled.div`
@@ -52,7 +59,7 @@ export const CardInfo = styled.span`
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+
         img {
             margin-right: ${theme.spacings.xxsmall};
         }
