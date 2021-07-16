@@ -27,7 +27,7 @@ describe("<GameInfo/>", () => {
         expect(container.firstChild).toMatchSnapshot();
     });
     it("should render buttons", () => {
-        renderWithTheme(<GameInfo title="won" />);
+        renderWithTheme(<GameInfo {...props} title="won" />);
 
         //button add to cart
         expect(
