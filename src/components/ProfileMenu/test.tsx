@@ -2,8 +2,13 @@ import { screen } from "@testing-library/react";
 
 import "jest-styled-components";
 
-import ProfileMenu from ".";
+import ProfileMenu, { ProfileMenuProps } from ".";
+import theme from "../../styles/theme";
 import { renderWithTheme } from "../../utils/tests/helpers";
+
+const props: ProfileMenuProps = {
+    activeLink: "/profile/cards",
+};
 
 describe("<ProfileMenu />", () => {
     it("should render the menu", () => {
@@ -25,5 +30,14 @@ describe("<ProfileMenu />", () => {
         ).toBeInTheDocument();
 
         expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it("should render the menu with a active link defined", () => {
+        renderWithTheme(<ProfileMenu {...props} activeLink="/profile/cards" />);
+
+        expect(screen.getByRole("link", { name: /my cards/i })).toHaveStyle({
+            background: theme.colors.primary,
+            color: theme.colors.white,
+        });
     });
 });
