@@ -8,8 +8,6 @@ import highlightMock from "../../components/Highlight/mock";
 import itemsMock from "../../components/CartList/mock";
 import cardsMock from "../../components/PaymentOptions/mock";
 
-import Empty from "../../components/Empty.tsx";
-
 import Cart from ".";
 
 const props = {
