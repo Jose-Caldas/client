@@ -1,6 +1,7 @@
 import CartList, { CartListProps } from "../../components/CartList";
 import { Container } from "../../components/Container";
 import { Divider } from "../../components/Divider";
+import Empty from "../../components/Empty.tsx";
 import { GameCardProps } from "../../components/GameCard";
 import Heading from "../../components/Heading";
 import { HighlightProps } from "../../components/Highlight";
@@ -35,13 +36,22 @@ const Cart = ({
                     My cart
                 </Heading>
 
-                <S.Content>
-                    <CartList items={items} total={total} />
-                    <PaymentOptions
-                        cards={cards}
-                        handlePayment={handlePayment}
+                {items.length >= 1 ? (
+                    <S.Content>
+                        <CartList items={items} total={total} />
+                        <PaymentOptions
+                            cards={cards}
+                            handlePayment={handlePayment}
+                        />
+                    </S.Content>
+                ) : (
+                    <Empty
+                        title="Your cart is empty"
+                        description="Go back to the home and explore great games and offers"
+                        hasLink
                     />
-                </S.Content>
+                )}
+
                 <Divider />
             </Container>
 

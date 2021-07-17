@@ -14,7 +14,7 @@ export async function getServerSideProps() {
             recommendedGames: gamesMock.slice(0, 5),
             recommendedHighlight: highlightMock,
             items: mockItems,
-            total: "$ 330,00",
+            total: "$ 430,00",
             cards: cardsMock,
         },
     };
