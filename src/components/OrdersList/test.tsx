@@ -6,14 +6,14 @@ import { renderWithTheme } from "../../utils/tests/helpers";
 
 import mock from "./mock";
 
-jest.mock("components/Empty", () => ({
+jest.mock("../Empty", () => ({
     __esModule: true,
     default: function Mock() {
         return <div data-testid="Mock Empty" />;
     },
 }));
 
-jest.mock("../components/GameItem", () => ({
+jest.mock("../GameItem", () => ({
     __esModule: true,
     default: function Mock({ children }: { children: React.ReactNode }) {
         return <div data-testid="Mock GameItem">{children}</div>;

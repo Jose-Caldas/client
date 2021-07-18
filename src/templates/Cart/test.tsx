@@ -46,7 +46,7 @@ jest.mock("components/PaymentOptions", () => ({
     },
 }));
 
-jest.mock("../../components/Empty.tsx", () => ({
+jest.mock("components/Empty", () => ({
     __esModule: true,
     default: function Mock() {
         return <div data-testid="Mock Empty" />;

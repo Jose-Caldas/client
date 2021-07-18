@@ -6,7 +6,7 @@ import { HighlightProps } from "../../components/Highlight";
 import Showcase from "../../components/Showcase";
 import Base from "../Base";
 import { Divider } from "../../components/Divider";
-import Empty from "../../components/Empty.tsx";
+import Empty from "../../components/Empty";
 
 export type WishlistTemplateProps = {
     games?: GameCardProps[];

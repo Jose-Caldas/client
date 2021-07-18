@@ -1,7 +1,7 @@
 import CartList, { CartListProps } from "../../components/CartList";
 import { Container } from "../../components/Container";
 import { Divider } from "../../components/Divider";
-import Empty from "../../components/Empty.tsx";
+import Empty from "../../components/Empty";
 import { GameCardProps } from "../../components/GameCard";
 import Heading from "../../components/Heading";
 import { HighlightProps } from "../../components/Highlight";
