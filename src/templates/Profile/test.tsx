@@ -6,7 +6,11 @@ import Profile from ".";
 
 describe("<Profile/>", () => {
     it("should render the medium size by default", () => {
-        render(<Profile />);
+        render(
+            <Profile>
+                <h1>Profile</h1>
+            </Profile>
+        );
         expect(
             screen.getByRole("heading", { name: /Profile/i })
         ).toBeInTheDocument();
