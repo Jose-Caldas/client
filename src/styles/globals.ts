@@ -1,18 +1,19 @@
 import {
-  createGlobalStyle,
-  css,
-  GlobalStyleComponent,
-  DefaultTheme,
+    createGlobalStyle,
+    css,
+    GlobalStyleComponent,
+    DefaultTheme,
 } from "styled-components";
 
 type GlobalStylesProps = {
-  removeBg?: boolean;
+    removeBg?: boolean;
 };
 
 export const GlobalStyles: GlobalStyleComponent<
-  GlobalStylesProps,
-  DefaultTheme
+    GlobalStylesProps,
+    DefaultTheme
 > = createGlobalStyle`
+
 
 
 @font-face {
@@ -54,6 +55,7 @@ export const GlobalStyles: GlobalStyleComponent<
      &::before,
      &::after{
        box-sizing:inherits;
+
      }
  }
 
@@ -67,8 +69,8 @@ ${({ theme, removeBg }) => css`
     font-size: ${theme.font.sizes.medium};
 
     ${
-      !removeBg &&
-      css`
+        !removeBg &&
+        css`
     background-color: ${theme.colors.mainBg};
   }
     `

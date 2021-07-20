@@ -43,8 +43,8 @@ const ExploreSidebar = ({
     };
 
     const handleFilter = () => {
-        onFilter(values);
         setIsOpen(false);
+        onFilter(values);
     };
 
     return (
