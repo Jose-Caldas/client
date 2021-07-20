@@ -1,4 +1,6 @@
 import GamesTemplate, { GamesTemplateProps } from "../templates/Games";
+import filterMock from "../components/ExploreSidebar/mock";
+import gamesMock from "../components/GameCardSlider/mock";
 
 function GamesPage(props: GamesTemplateProps) {
     return <GamesTemplate {...props} />;
@@ -7,7 +9,8 @@ function GamesPage(props: GamesTemplateProps) {
 export async function getServerSideProps() {
     return {
         props: {
-            games: [],
+            games: gamesMock,
+            filterItems: filterMock,
         },
     };
 }
