@@ -5,13 +5,13 @@ import CartList from "../CartList";
 import { GameItemProps } from "../GameItem";
 
 export type CartDropdownProps = {
-    items: GameItemProps[];
-    total: string;
+    items?: GameItemProps[];
+    total?: string;
 };
 
 const CartDropdown = ({ items, total }: CartDropdownProps) => (
     <S.Wrapper>
-        <Dropdown title={<CartIcon quantity={items.length} />}>
+        <Dropdown title={<CartIcon quantity={items?.length} />}>
             <CartList items={items} total={total} hasButton />
         </Dropdown>
     </S.Wrapper>

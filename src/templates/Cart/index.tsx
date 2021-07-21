@@ -36,7 +36,7 @@ const Cart = ({
                     My cart
                 </Heading>
 
-                {items.length >= 1 ? (
+                {items?.length ? (
                     <S.Content>
                         <CartList items={items} total={total} />
                         <PaymentOptions
