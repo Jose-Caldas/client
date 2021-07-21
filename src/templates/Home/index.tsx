@@ -9,7 +9,6 @@ import Showcase from "../../components/Showcase";
 import { SectionBanner, SectionNews, SectionUpcoming } from "./styles";
 
 export type HomeTemplateProps = {
-    data: any;
     banners: BannerProps[];
     newGames: GameCardProps[];
     mostPopularHighlight: HighlightProps;
