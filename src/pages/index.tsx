@@ -1,5 +1,3 @@
-import { gql, useQuery } from "@apollo/client";
-
 import Home, { HomeTemplateProps } from "../templates/Home";
 import bannersMock from "../components/BannerSlider/mock";
 import gamesMock from "../components/GameCardSlider/mock";

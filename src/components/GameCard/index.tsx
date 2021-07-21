@@ -1,76 +1,73 @@
+import Link from "next/link";
+import * as S from "./styles";
 import {
-  Wrapper,
-  ImageBox,
-  GameInfo,
-  Title,
-  Developer,
-  FavButton,
-  BuyBox,
-  Price,
-  Content,
-} from "./styles";
-import {
-  AddShoppingCart,
-  FavoriteBorder,
-  Favorite,
+    AddShoppingCart,
+    FavoriteBorder,
+    Favorite,
 } from "@styled-icons/material-outlined";
 import Button from "../Button";
 import { ReactNode } from "react";
 import Ribbon, { RibbonColors, RibbonSizes } from "../Ribbon";
 
 export type GameCardProps = {
-  img: string;
-  title: string;
-  developer: string;
-  price: string;
-  promotionalPrice?: string;
-  favorite?: boolean;
-  onFav?: () => void;
-  ribbon?: ReactNode;
-  ribbonSize?: RibbonSizes;
-  ribbonColor?: RibbonColors;
+    slug: string;
+    img: string;
+    title: string;
+    developer: string;
+    price: string;
+    promotionalPrice?: string;
+    favorite?: boolean;
+    onFav?: () => void;
+    ribbon?: ReactNode;
+    ribbonSize?: RibbonSizes;
+    ribbonColor?: RibbonColors;
 };
 const GameCard = ({
-  img,
-  title,
-  developer,
-  price,
-  promotionalPrice,
-  favorite = false,
-  onFav,
-  ribbon,
-  ribbonColor = "primary",
-  ribbonSize = "small",
+    img,
+    title,
+    developer,
+    price,
+    promotionalPrice,
+    favorite = false,
+    onFav,
+    ribbon,
+    ribbonColor = "primary",
+    ribbonSize = "small",
+    slug,
 }: GameCardProps) => (
-  <Wrapper>
-    {!!ribbon && (
-      <Ribbon color={ribbonColor} size={ribbonSize}>
-        {ribbon}
-      </Ribbon>
-    )}
-
-    <ImageBox>
-      <img src={img} alt={title} />
-    </ImageBox>
-    <Content>
-      <GameInfo>
-        <Title>{title}</Title>
-        <Developer>{developer}</Developer>
-      </GameInfo>
-      <FavButton role="button" onClick={onFav}>
-        {favorite ? (
-          <Favorite aria-label="Remove from Wishlist" />
-        ) : (
-          <FavoriteBorder aria-label="Add to Wishlist" />
+    <S.Wrapper>
+        {!!ribbon && (
+            <Ribbon color={ribbonColor} size={ribbonSize}>
+                {ribbon}
+            </Ribbon>
         )}
-      </FavButton>
-      <BuyBox>
-        {!!promotionalPrice && <Price isPromotional>{price}</Price>}
-        <Price>{promotionalPrice || price}</Price>
-        <Button icon={<AddShoppingCart />} size="small" />
-      </BuyBox>
-    </Content>
-  </Wrapper>
+
+        <Link href={`game/${slug}`} passHref>
+            <S.ImageBox>
+                <img src={img} alt={title} />
+            </S.ImageBox>
+        </Link>
+        <S.Content>
+            <Link href={`game/${slug}`} passHref>
+                <S.GameInfo>
+                    <S.Title>{title}</S.Title>
+                    <S.Developer>{developer}</S.Developer>
+                </S.GameInfo>
+            </Link>
+            <S.FavButton role="button" onClick={onFav}>
+                {favorite ? (
+                    <Favorite aria-label="Remove from Wishlist" />
+                ) : (
+                    <FavoriteBorder aria-label="Add to Wishlist" />
+                )}
+            </S.FavButton>
+            <S.BuyBox>
+                {!!promotionalPrice && <S.Price isPromotional>{price}</S.Price>}
+                <S.Price>{promotionalPrice || price}</S.Price>
+                <Button icon={<AddShoppingCart />} size="small" />
+            </S.BuyBox>
+        </S.Content>
+    </S.Wrapper>
 );
 
 export default GameCard;
