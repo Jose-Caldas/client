@@ -2,6 +2,7 @@ import GamesTemplate, { GamesTemplateProps } from "../templates/Games";
 import filterMock from "../components/ExploreSidebar/mock";
 import { initializeApollo } from "../utils/apollo";
 import { gql } from "@apollo/client";
+import { QUERY_GAMES } from "../graphql/queries/games";
 
 function GamesPage(props: GamesTemplateProps) {
     return <GamesTemplate {...props} />;
@@ -10,21 +11,8 @@ function GamesPage(props: GamesTemplateProps) {
 export async function getStaticProps() {
     const apolloClient = initializeApollo();
     const { data } = await apolloClient.query({
-        query: gql`
-            query QueryGames {
-                games {
-                    name
-                    slug
-                    cover {
-                        url
-                    }
-                    developers {
-                        name
-                    }
-                    price
-                }
-            }
-        `,
+        query: QUERY_GAMES,
+        variables: { limit: 9 },
     });
 
     return {
