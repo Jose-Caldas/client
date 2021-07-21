@@ -13,14 +13,14 @@ const FormProfile = () => (
                 label="Name"
                 name="name"
                 placeholder="Name"
-                inicialValue="Jhon Doe"
+                inicialValue="Jrcaldas"
             />
             <TextField
                 label="E-mail"
                 name="email"
                 type="email"
                 placeholder="E-mail"
-                inicialValue="jhondoe@gmail.com"
+                inicialValue="jrcaldas@gmail.com"
                 disabled
             />
             <TextField
