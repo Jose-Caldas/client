@@ -7,7 +7,7 @@ import { renderWithTheme } from "../../utils/tests/helpers";
 const props = {
     title: "Borderlands 3",
     description: "Experience the epic space strategy",
-    price: "240,00",
+    price: 240,
 };
 
 describe("<GameInfo/>", () => {
