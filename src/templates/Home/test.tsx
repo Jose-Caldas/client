@@ -17,7 +17,6 @@ const props = {
     mostPopularGames: gamesMock,
     upcommingGames: gamesMock,
     upcommingHighlight: highlightMock,
-    upcommingMoreGames: gamesMock,
     freeGames: gamesMock,
     freeHighlight: highlightMock,
 };
@@ -49,6 +48,6 @@ describe("<Home/>", () => {
         expect(screen.getByTestId("Mock BannerSlider")).toBeInTheDocument();
 
         //Showcase
-        expect(screen.getAllByTestId("Mock Showcase")).toHaveLength(5);
+        expect(screen.getAllByTestId("Mock Showcase")).toHaveLength(4);
     });
 });

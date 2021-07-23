@@ -6,7 +6,7 @@ import { HighlightProps } from "../../components/Highlight";
 import BannerSlider from "../../components/BannerSlider";
 import Showcase from "../../components/Showcase";
 
-import { SectionBanner, SectionNews, SectionUpcoming } from "./styles";
+import { SectionBanner, SectionNews } from "./styles";
 
 export type HomeTemplateProps = {
     banners: BannerProps[];
@@ -15,7 +15,6 @@ export type HomeTemplateProps = {
     mostPopularGames: GameCardProps[];
     upcommingGames: GameCardProps[];
     upcommingHighlight: HighlightProps;
-    upcommingMoreGames: GameCardProps[];
     freeGames: GameCardProps[];
     freeHighlight: HighlightProps;
 };
@@ -27,7 +26,6 @@ const Home = ({
     mostPopularGames,
     upcommingGames,
     upcommingHighlight,
-    upcommingMoreGames,
     freeGames,
     freeHighlight,
 }: HomeTemplateProps) => (
@@ -39,7 +37,7 @@ const Home = ({
         </Container>
 
         <SectionNews>
-            <Showcase title="News" games={newGames} />
+            <Showcase title="News" games={newGames} color="black" />
         </SectionNews>
 
         <Showcase
@@ -48,13 +46,11 @@ const Home = ({
             games={mostPopularGames}
         />
 
-        <SectionUpcoming>
-            <Showcase title="Upcoming Games" games={upcommingGames} />
-            <Showcase
-                highlight={upcommingHighlight}
-                games={upcommingMoreGames}
-            />
-        </SectionUpcoming>
+        <Showcase
+            title="Upcoming Games"
+            games={upcommingGames}
+            highlight={upcommingHighlight}
+        />
 
         <Showcase
             title=" Free Games"
