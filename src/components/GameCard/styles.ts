@@ -91,6 +91,16 @@ export const BuyBox = styled.div`
         align-items: center;
         justify-content: flex-end;
         margin-top: ${theme.spacings.xxsmall};
+
+        span {
+            background-color: ${theme.colors.secondary};
+            color: ${theme.colors.white};
+            padding: 0.6rem ${theme.spacings.xsmall};
+            font-weight: ${theme.font.bold};
+
+            border: none;
+            border-radius: ${theme.border.radius};
+        }
     `}
 `;
 

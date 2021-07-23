@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 import { BannerFragment } from "../fragments/banner";
 import { GameFragment } from "../fragments/game";
+import { HighlightFragment } from "../fragments/highlight";
 
 export const QUERY_HOME = gql`
     query QueryHome {
@@ -31,7 +32,38 @@ export const QUERY_HOME = gql`
         ) {
             ...GameFragment
         }
+
+        sections: home {
+            newGames {
+                title
+                highlight {
+                    ...HighlightFragment
+                }
+            }
+            popularGames {
+                title
+                highligth {
+                    ...HighlightFragment
+                }
+                games {
+                    ...GameFragment
+                }
+            }
+            upcomingGames {
+                title
+                highlight {
+                    ...HighlightFragment
+                }
+            }
+            freeGames {
+                title
+                highlight {
+                    ...HighlightFragment
+                }
+            }
+        }
     }
     ${BannerFragment}
     ${GameFragment}
+    ${HighlightFragment}
 `;
