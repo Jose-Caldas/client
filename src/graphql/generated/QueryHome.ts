@@ -120,22 +120,22 @@ export interface QueryHome_sections_newGames {
   highlight: QueryHome_sections_newGames_highlight | null;
 }
 
-export interface QueryHome_sections_popularGames_highligth_background {
+export interface QueryHome_sections_popularGames_highlight_background {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_sections_popularGames_highligth_floatimage {
+export interface QueryHome_sections_popularGames_highlight_floatimage {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_sections_popularGames_highligth {
+export interface QueryHome_sections_popularGames_highlight {
   __typename: "ComponentPageHighlight";
   title: string;
   subtitle: string;
-  background: QueryHome_sections_popularGames_highligth_background | null;
-  floatimage: QueryHome_sections_popularGames_highligth_floatimage | null;
+  background: QueryHome_sections_popularGames_highlight_background | null;
+  floatimage: QueryHome_sections_popularGames_highlight_floatimage | null;
   buttonLabel: string;
   buttonLink: string;
   alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT | null;
@@ -163,7 +163,7 @@ export interface QueryHome_sections_popularGames_games {
 export interface QueryHome_sections_popularGames {
   __typename: "ComponentPagePopularGames";
   title: string;
-  highligth: QueryHome_sections_popularGames_highligth | null;
+  highlight: QueryHome_sections_popularGames_highlight | null;
   games: QueryHome_sections_popularGames_games[];
 }
 

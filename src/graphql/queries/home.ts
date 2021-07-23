@@ -42,7 +42,7 @@ export const QUERY_HOME = gql`
             }
             popularGames {
                 title
-                highligth {
+                highlight {
                     ...HighlightFragment
                 }
                 games {

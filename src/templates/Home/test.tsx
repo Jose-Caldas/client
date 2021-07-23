@@ -19,6 +19,10 @@ const props = {
     upcommingHighlight: highlightMock,
     freeGames: gamesMock,
     freeHighlight: highlightMock,
+    newGamesTitle: "New Games",
+    mostPopularGamesTitle: "Most Popular Games",
+    upcomingGamesTitle: "Upcoming Games",
+    freeGamesTitle: "Free Games",
 };
 
 //mock para otimizar teste

@@ -1400,20 +1400,20 @@ input editComponentPageNewGameInput {
 type ComponentPagePopularGames {
   id: ID!
   title: String!
-  highligth: ComponentPageHighlight
+  highlight: ComponentPageHighlight
   games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
 }
 
 input ComponentPagePopularGameInput {
   title: String!
-  highligth: ComponentPageHighlightInput
+  highlight: ComponentPageHighlightInput
   games: [ID]
 }
 
 input editComponentPagePopularGameInput {
   id: ID
   title: String
-  highligth: editComponentPageHighlightInput
+  highlight: editComponentPageHighlightInput
   games: [ID]
 }
 
