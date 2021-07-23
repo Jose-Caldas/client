@@ -4,10 +4,10 @@ import { Wrapper, Title, Subtitle, Content, FloatImage } from "./styles";
 export type HighlightProps = {
     title: string;
     subtitle: string;
-    buttonLabel: string;
-    buttonLink: string;
     backgroundImage: string;
     floatImage?: string;
+    buttonLabel: string;
+    buttonLink: string;
     alignment?: "right" | "left";
 };
 
