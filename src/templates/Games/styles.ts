@@ -23,3 +23,10 @@ export const ShowMore = styled.div`
         }
     `}
 `;
+
+export const Loader = styled.p`
+    ${({ theme }) => css`
+        font-size: ${theme.font.sizes.large};
+        color: ${theme.colors.white};
+    `}
+`;

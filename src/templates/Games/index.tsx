@@ -18,41 +18,47 @@ export type GamesTemplateProps = {
 };
 
 const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
-    const { data, loading } = useQuery<QueryGames, QueryGamesVariables>(
-        QUERY_GAMES,
-        { variables: { limit: 15 } }
-    );
+    const { data, loading, fetchMore } = useQuery<
+        QueryGames,
+        QueryGamesVariables
+    >(QUERY_GAMES, { variables: { limit: 15 } });
 
     const handleFilter = () => {
         return;
     };
 
     const handleShowMore = () => {
-        return;
+        fetchMore({ variables: { limit: 15, start: data?.games.length } });
     };
 
     return (
         <Base>
             <S.Main>
                 <ExploreSidebar items={filterItems} onFilter={handleFilter} />
-                <section>
-                    <Grid>
-                        {data?.games.map((game) => (
-                            <GameCard
-                                key={game.slug}
-                                title={game.name}
-                                slug={game.slug}
-                                developer={game.developers[0].name}
-                                img={`http://localhost:1337${game.cover!.url}`}
-                                price={game.price}
-                            />
-                        ))}
-                    </Grid>
-                    <S.ShowMore role="button" onClick={handleShowMore}>
-                        <p>Show more</p>
-                        <ArrowDown size={35} />
-                    </S.ShowMore>
-                </section>
+                {loading ? (
+                    <S.Loader>Loading...</S.Loader>
+                ) : (
+                    <section>
+                        <Grid>
+                            {data?.games.map((game) => (
+                                <GameCard
+                                    key={game.slug}
+                                    title={game.name}
+                                    slug={game.slug}
+                                    developer={game.developers[0].name}
+                                    img={`http://localhost:1337${
+                                        game.cover!.url
+                                    }`}
+                                    price={game.price}
+                                />
+                            ))}
+                        </Grid>
+                        <S.ShowMore role="button" onClick={handleShowMore}>
+                            <p>Show more</p>
+                            <ArrowDown size={35} />
+                        </S.ShowMore>
+                    </section>
+                )}
             </S.Main>
         </Base>
     );
