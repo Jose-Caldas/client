@@ -3,15 +3,26 @@ import GameCard, { GameCardProps } from "../../components/GameCard";
 import { Grid } from "../../components/Grid";
 import Base from "../Base";
 import { KeyboardArrowDown as ArrowDown } from "@styled-icons/material-outlined";
+import { useQuery } from "@apollo/client";
 
 import * as S from "./styles";
+import {
+    QueryGames,
+    QueryGamesVariables,
+} from "../../graphql/generated/QueryGames";
+import { QUERY_GAMES } from "../../graphql/queries/games";
 
 export type GamesTemplateProps = {
     games?: GameCardProps[];
     filterItems: ItemProps[];
 };
 
-const GamesTemplate = ({ games = [], filterItems }: GamesTemplateProps) => {
+const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
+    const { data, loading } = useQuery<QueryGames, QueryGamesVariables>(
+        QUERY_GAMES,
+        { variables: { limit: 15 } }
+    );
+
     const handleFilter = () => {
         return;
     };
@@ -26,8 +37,15 @@ const GamesTemplate = ({ games = [], filterItems }: GamesTemplateProps) => {
                 <ExploreSidebar items={filterItems} onFilter={handleFilter} />
                 <section>
                     <Grid>
-                        {games.map((game) => (
-                            <GameCard key={game.title} {...game} />
+                        {data?.games.map((game) => (
+                            <GameCard
+                                key={game.slug}
+                                title={game.name}
+                                slug={game.slug}
+                                developer={game.developers[0].name}
+                                img={`http://localhost:1337${game.cover!.url}`}
+                                price={game.price}
+                            />
                         ))}
                     </Grid>
                     <S.ShowMore role="button" onClick={handleShowMore}>

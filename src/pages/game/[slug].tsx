@@ -1,8 +1,6 @@
 import { useRouter } from "next/router";
 import { initializeApollo } from "../../utils/apollo";
 import Game, { GameTemplateProps } from "../../templates/Game";
-import gamesMock from "../../components/GameCardSlider/mock";
-import highlightMock from "../../components/Highlight/mock";
 import {
     QueryGames,
     QueryGamesVariables,
