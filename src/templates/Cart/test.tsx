@@ -16,6 +16,7 @@ const props = {
     cards: cardsMock,
     recommendedHighlight: highlightMock,
     recommendedGames: gamesMock,
+    recommendedTitle: "You may like these games",
 };
 
 jest.mock("templates/Base", () => ({
