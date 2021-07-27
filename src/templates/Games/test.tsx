@@ -57,6 +57,20 @@ describe("<Games />", () => {
         expect(await screen.findByText(/Fetch More Game/i)).toBeInTheDocument();
     });
 
+    it("should render empty when no games found", async () => {
+        renderWithTheme(
+            <MockedProvider mocks={[]} addTypename={false}>
+                <GamesTemplate filterItems={filterMock} />
+            </MockedProvider>
+        );
+
+        expect(
+            await screen.findByText(
+                /We didn't find any games with this filter/i
+            )
+        ).toBeInTheDocument();
+    });
+
     it("should change push router when selecting a filter", async () => {
         renderWithTheme(
             <MockedProvider

@@ -3,6 +3,7 @@ import GameCard from "../../components/GameCard";
 import { Grid } from "../../components/Grid";
 import Base from "../Base";
 import { KeyboardArrowDown as ArrowDown } from "@styled-icons/material-outlined";
+import Empty from "../../components/Empty";
 
 import * as S from "./styles";
 import {} from "../../graphql/generated/QueryGames";
@@ -56,24 +57,37 @@ const GamesTemplate = ({ filterItems }: GamesTemplateProps) => {
                     <S.Loader>Loading...</S.Loader>
                 ) : (
                     <section>
-                        <Grid>
-                            {data?.games.map((game) => (
-                                <GameCard
-                                    key={game.slug}
-                                    title={game.name}
-                                    slug={game.slug}
-                                    developer={game.developers[0].name}
-                                    img={`http://localhost:1337${
-                                        game.cover!.url
-                                    }`}
-                                    price={game.price}
-                                />
-                            ))}
-                        </Grid>
-                        <S.ShowMore role="button" onClick={handleShowMore}>
-                            <p>Show more</p>
-                            <ArrowDown size={35} />
-                        </S.ShowMore>
+                        {data?.games.length ? (
+                            <>
+                                <Grid>
+                                    {data?.games.map((game) => (
+                                        <GameCard
+                                            key={game.slug}
+                                            title={game.name}
+                                            slug={game.slug}
+                                            developer={game.developers[0].name}
+                                            img={`http://localhost:1337${
+                                                game.cover!.url
+                                            }`}
+                                            price={game.price}
+                                        />
+                                    ))}
+                                </Grid>
+                                <S.ShowMore
+                                    role="button"
+                                    onClick={handleShowMore}
+                                >
+                                    <p>Show more</p>
+                                    <ArrowDown size={35} />
+                                </S.ShowMore>
+                            </>
+                        ) : (
+                            <Empty
+                                title=":) Sorry!!!"
+                                description="We didn't find any games with this filter. Please, select another filter"
+                                hasLink
+                            />
+                        )}
                     </section>
                 )}
             </S.Main>
