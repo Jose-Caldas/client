@@ -3,7 +3,7 @@ import { GameFragment } from "../fragments/game";
 import { QueryGames, QueryGamesVariables } from "../generated/QueryGames";
 
 export const QUERY_GAMES = gql`
-    query QueryGames($limit: Int!, $start: Int, $where: JSON) {
+    query QueryGames($limit: Int, $start: Int, $where: JSON, $sort: String) {
         games(limit: $limit, start: $start, where: $where, sort: $sort) {
             ...GameFragment
         }
