@@ -12,6 +12,15 @@ export const Main = styled(Container)`
 
 export const ShowMore = styled.div`
     ${({ theme }) => css`
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10rem;
+    `}
+`;
+
+export const ShowMoreButton = styled.div`
+    ${({ theme }) => css`
         color: ${theme.colors.white};
         text-align: center;
         padding: ${theme.spacings.medium};
@@ -24,9 +33,6 @@ export const ShowMore = styled.div`
     `}
 `;
 
-export const Loader = styled.p`
-    ${({ theme }) => css`
-        font-size: ${theme.font.sizes.large};
-        color: ${theme.colors.white};
-    `}
+export const ShowMoreLoading = styled.img`
+    width: 4rem;
 `;
