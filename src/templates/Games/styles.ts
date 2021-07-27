@@ -11,12 +11,10 @@ export const Main = styled(Container)`
 `;
 
 export const ShowMore = styled.div`
-    ${({ theme }) => css`
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 10rem;
-    `}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
 `;
 
 export const ShowMoreButton = styled.div`
