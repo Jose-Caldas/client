@@ -1,21 +1,40 @@
-import { ReactNode } from "react";
-import { createContext, useContext } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
+import { getStorageItem } from "../../utils/localStorage";
 
-export type ContextData = {};
+const CART_KEY = "cartItems";
 
-export const cartContextDefaultValues = {};
+export type CartContextData = {
+    items: string[];
+};
 
-export const CartContext = createContext<ContextData>(cartContextDefaultValues);
+export const CartContextDefaultValues = {
+    items: [],
+};
+
+export const CartContext = createContext<CartContextData>(
+    CartContextDefaultValues
+);
 
 export type CartProviderProps = {
-    children: ReactNode;
+    children: React.ReactNode;
 };
 
 const CartProvider = ({ children }: CartProviderProps) => {
-    <CartContext.Provider value={{}}>{children}</CartContext.Provider>;
-};
+    const [cartItems, setCartItems] = useState<string[]>([]);
 
-//criação do hook
+    useEffect(() => {
+        const data = getStorageItem(CART_KEY);
+        if (data) {
+            setCartItems(data);
+        }
+    }, []);
+
+    return (
+        <CartContext.Provider value={{ items: cartItems }}>
+            {children}
+        </CartContext.Provider>
+    );
+};
 
 const useCart = () => useContext(CartContext);
 
