@@ -3,7 +3,7 @@ import { screen } from "@testing-library/react";
 import "jest-styled-components";
 import { renderWithTheme } from "../../utils/tests/helpers";
 import { MockedProvider } from "@apollo/client/testing";
-import { fetchMoreMock, gamesMock } from "./mocks";
+import { fetchMoreMock, gamesMock, noGamesMock } from "./mocks";
 
 import filterMock from "../../components/ExploreSidebar/mock";
 
@@ -59,7 +59,7 @@ describe("<Games />", () => {
 
     it("should render empty when no games found", async () => {
         renderWithTheme(
-            <MockedProvider mocks={[]} addTypename={false}>
+            <MockedProvider mocks={[noGamesMock]} addTypename={false}>
                 <GamesTemplate filterItems={filterMock} />
             </MockedProvider>
         );
