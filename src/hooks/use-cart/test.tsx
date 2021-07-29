@@ -4,6 +4,8 @@ import { setStorageItem } from "../../utils/localStorage";
 import { useCart, CartProvider, CartProviderProps } from ".";
 import { cartItems, gamesMock } from "./mock";
 import { MockedProvider } from "@apollo/client/testing";
+import { QueryGames_games } from "../../graphql/generated/QueryGames";
+import { cartMapper } from "../../utils/mappers";
 
 describe("useCart", () => {
     it("should return items and its info if there are any in the cart", async () => {
@@ -22,5 +24,31 @@ describe("useCart", () => {
         await waitForNextUpdate();
 
         expect(result.current.items).toStrictEqual(cartItems);
+    });
+
+    describe("cartMapper()", () => {
+        it("should return empty array if no games", () => {
+            expect(cartMapper(undefined)).toStrictEqual([]);
+        });
+
+        it("should return mapped items", () => {
+            const game = {
+                id: "1",
+                cover: {
+                    url: "/image.jpg",
+                },
+                name: "game",
+                price: 10,
+            } as QueryGames_games;
+
+            expect(cartMapper([game])).toStrictEqual([
+                {
+                    id: "1",
+                    img: "http://localhost:1337/image.jpg",
+                    title: "game",
+                    price: "$10.00",
+                },
+            ]);
+        });
     });
 });
