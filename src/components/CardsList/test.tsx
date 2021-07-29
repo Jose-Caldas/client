@@ -1,14 +1,14 @@
-import { screen } from "@testing-library/react";
+import { render, screen } from "../../utils/test-utils";
+
 import "jest-styled-components";
 
 import CardsList from ".";
-import { renderWithTheme } from "../../utils/tests/helpers";
 
 import cardsMock from "../PaymentOptions/mock";
 
 describe("<CardsList />", () => {
     it("should render the cards list", () => {
-        renderWithTheme(<CardsList cards={cardsMock} />);
+        render(<CardsList cards={cardsMock} />);
 
         expect(
             screen.getByRole("heading", { name: /my cards/i })

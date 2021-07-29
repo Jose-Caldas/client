@@ -1,12 +1,12 @@
 import "jest-styled-components";
+import { render } from "../../utils/test-utils";
 
 import { Container } from ".";
 import theme from "../../styles/theme";
-import { renderWithTheme } from "../../utils/tests/helpers";
 
 describe("<Container/>", () => {
     it("should render Container", () => {
-        const { container } = renderWithTheme(
+        const { container } = render(
             <Container>
                 <span>Won Games</span>
             </Container>
