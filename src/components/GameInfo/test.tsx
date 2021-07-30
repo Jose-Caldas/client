@@ -1,10 +1,11 @@
-import { screen } from "@testing-library/react";
+import { render, screen } from "../../utils/test-utils";
+
 import "jest-styled-components";
 
 import GameInfo from ".";
-import { renderWithTheme } from "../../utils/tests/helpers";
 
 const props = {
+    id: "1",
     title: "Borderlands 3",
     description: "Experience the epic space strategy",
     price: 240,
@@ -12,7 +13,7 @@ const props = {
 
 describe("<GameInfo/>", () => {
     it("should render game informations", () => {
-        const { container } = renderWithTheme(<GameInfo {...props} />);
+        const { container } = render(<GameInfo {...props} />);
         //Heading
         expect(
             screen.getByRole("heading", { name: /Borderlands 3/i })
@@ -27,7 +28,7 @@ describe("<GameInfo/>", () => {
         expect(container.firstChild).toMatchSnapshot();
     });
     it("should render buttons", () => {
-        renderWithTheme(<GameInfo {...props} title="won" />);
+        render(<GameInfo {...props} title="won" />);
 
         //button add to cart
         expect(
