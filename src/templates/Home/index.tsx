@@ -10,17 +10,17 @@ import { SectionBanner, SectionNews } from "./styles";
 
 export type HomeTemplateProps = {
     banners: BannerProps[];
+    newGamesTitle: string;
     newGames: GameCardProps[];
+    mostPopularGamesTitle: string;
     mostPopularHighlight: HighlightProps;
     mostPopularGames: GameCardProps[];
+    upcomingGamesTitle: string;
     upcommingGames: GameCardProps[];
     upcommingHighlight: HighlightProps;
+    freeGamesTitle: string;
     freeGames: GameCardProps[];
     freeHighlight: HighlightProps;
-    newGamesTitle: string;
-    mostPopularGamesTitle: string;
-    upcomingGamesTitle: string;
-    freeGamesTitle: string;
 };
 
 const Home = ({

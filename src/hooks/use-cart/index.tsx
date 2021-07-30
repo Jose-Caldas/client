@@ -1,4 +1,10 @@
-import { useContext, createContext, useState, useEffect } from "react";
+import {
+    useContext,
+    createContext,
+    useState,
+    useEffect,
+    ReactNode,
+} from "react";
 import { useQueryGames } from "../../graphql/queries/games";
 import { formatPrice } from "../../utils/format-price";
 import { getStorageItem, setStorageItem } from "../../utils/localStorage";
@@ -6,7 +12,7 @@ import { cartMapper } from "../../utils/mappers";
 
 const CART_KEY = "cartItems";
 
-type CartItem = {
+export type CartItem = {
     id: string;
     img: string;
     title: string;
@@ -40,7 +46,7 @@ export const CartContext = createContext<CartContextData>(
 );
 
 export type CartProviderProps = {
-    children: React.ReactNode;
+    children: ReactNode;
 };
 
 const CartProvider = ({ children }: CartProviderProps) => {

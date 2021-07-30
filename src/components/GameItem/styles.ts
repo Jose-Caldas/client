@@ -66,6 +66,21 @@ export const DownloadLink = styled.a`
     `}
 `;
 
+export const Group = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+`;
+
+export const Remove = styled.div`
+    ${({ theme }) => css`
+        cursor: pointer;
+        color: ${theme.colors.primary};
+        font-size: ${theme.font.sizes.small};
+    `}
+`;
+
 export const Price = styled.div`
     ${({ theme }) => css`
         color: ${theme.colors.white};

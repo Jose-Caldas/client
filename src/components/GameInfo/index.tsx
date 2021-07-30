@@ -19,9 +19,7 @@ const GameInfo = ({ id, title, description, price }: GameInfoProps) => (
             {title}
         </Heading>
 
-        <Ribbon color="secondary">
-            {price > 0 ? formatPrice(price) : <span>FREE</span>}
-        </Ribbon>
+        <Ribbon color="secondary">{formatPrice(price)}</Ribbon>
 
         <S.Description>{description}</S.Description>
 
