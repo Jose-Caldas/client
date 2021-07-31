@@ -16,9 +16,7 @@ export default {
     argTypes: {
         onFav: {
             action: "Clicked",
-        },
-        ribbon: {
-            type: "string",
+            ribbon: { type: "string" },
         },
     },
 

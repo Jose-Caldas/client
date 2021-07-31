@@ -49,14 +49,16 @@ const settings: Settings = {
     ],
 };
 
-const GameCardSlider = ({ items, color = "white" }: GameCardSliderProps) => (
-    <Wrapper color={color}>
-        <Slider settings={settings}>
-            {items.map((item, index) => (
-                <GameCard key={index} {...item} />
-            ))}
-        </Slider>
-    </Wrapper>
-);
+const GameCardSlider = ({ items, color = "white" }: GameCardSliderProps) => {
+    return (
+        <Wrapper color={color}>
+            <Slider settings={settings}>
+                {items.map((item, index) => (
+                    <GameCard key={index} {...item} />
+                ))}
+            </Slider>
+        </Wrapper>
+    );
+};
 
 export default GameCardSlider;
