@@ -7,9 +7,9 @@ import { Close } from "@styled-icons/material-outlined/Close";
 import { FilterList } from "@styled-icons/material-outlined/FilterList";
 import { ParsedUrlQueryInput } from "querystring";
 import xor from "lodash.xor";
+import { useEffect } from "react";
 
 import * as S from "./styles";
-import { useEffect } from "react";
 
 export type ItemProps = {
     title: string;
