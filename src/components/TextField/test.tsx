@@ -72,15 +72,6 @@ describe("<TextField />", () => {
         expect(onInput).toHaveBeenCalledWith(text);
     });
 
-    it("Is accessible by tab", () => {
-        renderWithTheme(<TextField label="TextField" name="TextField" />);
-
-        const input = screen.getByLabelText("TextField");
-        expect(document.body).toHaveFocus();
-
-        userEvent.tab();
-        expect(input).toHaveFocus();
-    });
     it("Renders with error", () => {
         const { container } = renderWithTheme(
             <TextField
@@ -94,5 +85,29 @@ describe("<TextField />", () => {
         expect(screen.getByText("Error message")).toBeInTheDocument();
 
         expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it("Is accessible by tab", () => {
+        renderWithTheme(<TextField label="TextField" name="TextField" />);
+
+        const input = screen.getByLabelText("TextField");
+        expect(document.body).toHaveFocus();
+
+        userEvent.tab();
+        expect(input).toHaveFocus();
+    });
+
+    it("Is not accessible by tab when disabled", async () => {
+        renderWithTheme(
+            <TextField label="TextField" id="TextField" disabled />
+        );
+
+        const input = screen.getByText("TextField");
+        expect(document.body).toHaveFocus();
+
+        userEvent.tab();
+        await waitFor(() => {
+            expect(input).not.toHaveFocus();
+        });
     });
 });
